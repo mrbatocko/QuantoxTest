@@ -1,13 +1,29 @@
 .app-header {
-  border-top: 1px solid rgba(0,0,0,.1);
-  border-bottom: 1px solid rgba(0,0,0,.1);
-  padding: 1.5rem 2rem 0;
+  height: 100%;
   margin: 0;
   text-align: center;
-  letter-spacing: .5px;
+  color: white;
+  position: relative;
+  &__content {
+    letter-spacing: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    transition: all .2s;
+    z-index: 1;
+    &--hidden {
+      transform: translate3d(-50%, -50%, 0) scale(0);
+      opacity: 0;
+    }
+  }
+  &__image {
+    height: 6rem;
+    margin-bottom: 1.5rem;
+  }
   &__title {
     margin-top: 0;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     font-size: 2.5rem;
     font-weight: 300;
   }
@@ -15,27 +31,56 @@
     font-size: 1.1rem;
     margin-top: 0;
     margin-bottom: 1.5rem;
+    line-height: 1.4;
   }
   &__init-error {
     margin: 0;
-    padding-bottom: 1.5rem;
-    color: #bf0b0b;
-    display: none;
-    &--error-thrown {
-      display: block;
-    }
+    color: #c13c3c;
   }
 }
 #app-init {
   font-family: inherit;
   font-size: 1.1rem;
-  font-weight: bold;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 2px solid white;
   border-radius: 25px;
+  color: white;
   outline: 0;
   padding: .5rem 2rem;
-  letter-spacing: .5px;
+  letter-spacing: 1px;
   cursor: pointer;
   margin-bottom: 1.5rem;
+  background-color: inherit;
+  transition: opacity .2s;
+  &:hover {
+    opacity: .5;
+  }
+}
+.loader {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  width: .5rem;
+  height: .5rem;
   background-color: white;
+  border-radius: 50%;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  &--loading {
+    display: inline-block;
+  }
+}
+
+@keyframes pulse{
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
 }
