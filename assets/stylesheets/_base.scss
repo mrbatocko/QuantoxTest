@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 html, body {
   padding: 0;
   margin: 0;
@@ -11,7 +14,8 @@ body {
 }
 .app-wrapper {
   height: 100%;
-  @media screen and (max-width: 768px) {
-
+  background: linear-gradient(to right, #41b79b, #4aafae);
+  @media screen and (max-width: 500px) {
+background: linear-gradient(#41b79b, #4aafae);
   }
 }
