@@ -1,0 +1,33 @@
+.app-locations {
+  padding-top: 1.5rem;
+  margin: 0;
+  letter-spacing: .5px;
+  text-align: center;
+  height: 100%;
+  &__total-count {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    display: none;
+    &--visible {
+      display: block;
+    }
+  }
+}
+.app-locations-wrapper {
+
+}
+.app-location {
+  margin-bottom: 3rem;
+  border: 1px solid rgba(black, .2);
+  background-color: rgba(black, .5);
+  &__image {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-bottom: .5rem;
+  }
+  &__distance {
+    margin: 0;
+  }
+}
