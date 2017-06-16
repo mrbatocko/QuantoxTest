@@ -1,7 +1,7 @@
 // UI controller
 var UIController = (function() {
 
-  // Private
+  // Private 
   var results, userPosition;
   var buildDOMFromResults = function() {
     var DOMString = '';
